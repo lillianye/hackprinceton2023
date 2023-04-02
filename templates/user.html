@@ -5,6 +5,10 @@
     <script src="{{ url_for('static', filename='ipfs.js') }}"></script>
 </head>
 
+{% if fileName: %}
+    <script> uploadFile({{fileName}})</script>
+{% endif %}
+
 <body>
     <h1>Welcome to Block!</h1>
 
