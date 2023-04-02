@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sent</title>
-    <link rel="stylesheet" href="stylesent.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesent.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
 </head>
 
 <body>
     <br>
     <br>
-    <div class="container"><img src="block.png"> BlockED.com</div>
+    <div class="container"><img src="{{url_for('static', filename="block.png")}}"> BlockED.com</div>
 
     <div class="form">
-        <p> The link to your data is {{link}}</p>
+        <p> The link to your data is <a href="{{link}}">here.</a></p>
         <p>The data has been safely sent to the recipient through the blockchain system.</p>
     </div>
 </body>
