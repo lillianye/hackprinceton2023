@@ -42,5 +42,9 @@ def upload():
     file.save(filepath)
     return redirect(url_for('user'))
 
+@app.route("/send", methods=["POST"])
+def send():
+
+
 if __name__ == '__main__':
     app.run(debug = True)
