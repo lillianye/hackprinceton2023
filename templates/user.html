@@ -2,20 +2,15 @@
 <html>
 <head>
     <title>Block</title>
-    <script data-main="{{url_for('static', filename='ipfs.js')}}" src="{{url_for('static', filename='require.js')}}"></script>
-    <script src="{{ url_for('static', filename='ipfs.js') }}"></script>
-    <script src="{{ url_for('static', filename='bundle.js') }}"></script>
 </head>
 
 <body>
     <h1>Welcome to Block!</h1>
 
-    <form action = "upload" method = "POST" enctype = "multipart/form-data">
+    <form action = "/upload" method = "POST" enctype = "multipart/form-data">
          <input type = "file" name = "file" />
-         <!-- <button type = "submit"/>Submit</button> -->
-         <input type = "submit" onclick="upload_file()"/>
+         <input type = "submit"/>
       </form>   
-    <!-- <button onclick="upload_file()" type="button">Upload</button> -->
     <br>
 
     <button onclick="download_file()">Download</button>
