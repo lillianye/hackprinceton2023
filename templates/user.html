@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block</title>
+    <script src="{{ url_for('static', filename='ipfs.js') }}"></script>
+</head>
+
+<body>
+    <h1>Welcome to Block!</h1>
+
+    <form action = "user" method = "post" enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <button type = "submit"/>Submit</button>
+         <!-- <input type = "submit" onclick="upload_file({{file_name_param}})/> -->
+      </form>   
+    <!-- <button onclick="upload_file({{file_name_param}})" type="button">Upload</button> -->
+    <br>
+
+    <button onclick="anotherFunction()">Download</button>
+</body>
+</html>

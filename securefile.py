@@ -6,21 +6,44 @@
 #-----------------------------------------------------------------------
 
 import flask
+from flask import Flask, render_template, request, redirect, url_for
+from werkzeug.utils import secure_filename
+import os
 
 app = flask.Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static'
+app.config['MAX_CONTENT_PATH'] = 16 * 100 * 100
 
 @app.route("/", methods=["GET"])
 @app.route("/index", methods=["GET"])
 def index():
-	html_code = flask.render_template('index.html')
+    html_code = flask.render_template('index.html')
 
-	response = flask.make_response(html_code)
-	return response
+    response = flask.make_response(html_code)
+    return response
 
-@app.route("/user", methods=["GET"])
+@app.route("/user", methods=["GET", "POST"])
 def user():
-	file_path_param = 'test'
-	html_code = flask.render_template('user.html', file_name_param=file_path_param)
+    print("yuh")
+    if request.method == 'POST':
+        print("yuh")
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        return redirect(url_for('user'))
 
-	response = flask.make_response(html_code)
-	return response
+    if request.method == 'GET':
+        html_code = flask.render_template('user.html')
+
+        response = flask.make_response(html_code)
+        return response
+
+if __name__ == '__main__':
+   app.run(debug = True)
