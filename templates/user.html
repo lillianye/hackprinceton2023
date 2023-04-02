@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Block</title>
-    <script src="{{ url_for('static', filename='ipfs.js') }}"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styleuser.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Welcome to Block!</h1>
-
-    <form action = "user" method = "post" enctype = "multipart/form-data">
-         <input type = "file" name = "file" />
-         <button type = "submit"/>Submit</button>
-         <!-- <input type = "submit" onclick="upload_file({{file_name_param}})/> -->
-      </form>   
-    <!-- <button onclick="upload_file({{file_name_param}})" type="button">Upload</button> -->
     <br>
+    <br>
+    <div class="container"><img src="block.png"> BlockED.com</div>
 
-    <button onclick="anotherFunction()">Download</button>
+    <form action="user.html" method="get">
+        <fieldset>
+            <div class="sign">Welcome to BlockED</div>
+            <br>
+            <label for="user" >Upload file</label>
+            <br>
+            <input type="file" name="file">
+            <br><br>
+            
+            <label for="Password">Enter recipient email</label>
+            <br>
+            <input type="text" id="pass" name="pass" placeholder="doodle123"><br><br>
+
+            <input type="submit" value="Send">
+        </fieldset>
+    </form>
 </body>
 </html>

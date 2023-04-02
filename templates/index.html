@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Block</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BlockED</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Welcome to Block!</h1>
+    <br>
+    <br>
+    <div class="container"><img src="block.png"> BlockED.com</div>
 
-    <form action="/user" method="get">
-        <input type="submit" value="Login">
+    <form action="user.html" method="get">
+        <fieldset>
+            <div class="sign">Sign in to your account</div>
+            <br>
+            <label for="user" >Enter email </label>
+            <br>
+            <input type="email" id="user" name="user" placeholder="ducky@gmail.com">
+            <br><br>
+            
+            <label for="Password">Enter password </label>
+            <br>
+            <input type="password" id="pass" name="pass" placeholder="doodle123"><br><br>
+
+            <input type="submit" value="Sign in">
+        </fieldset>
     </form>
 </body>
 </html>
