@@ -13,7 +13,7 @@
     <br>
     <div class="container"><img src="block.png"> BlockED.com</div>
 
-    <form action="user.html" method="get">
+    <form action="upload.html" method = "POST" enctype = "multipart/form-data">
         <fieldset>
             <div class="sign">Welcome to BlockED</div>
             <br>
@@ -27,6 +27,8 @@
             <input type="text" id="pass" name="pass" placeholder="doodle123"><br><br>
 
             <input type="submit" value="Send">
+
+            <button onclick="download_file()">Download</button>
         </fieldset>
     </form>
 </body>
